@@ -110,6 +110,7 @@ $ git clone https://github.com/borgbase/ansible-role-borgbackup.git roles/ansibl
 - `borgmatic_timer_minute`: Minute when regular create and prune cron/systemd-timer job will run. Defaults to  `{{ 59 | random }}`
 - `borgmatic_hooks`: Hooks to monitor your backups e.g. with [Healthchecks](https://healthchecks.io/). See [official documentation](https://torsion.org/borgmatic/docs/how-to/monitor-your-backups/) for more.
 - `borgmatic_timer`: If the variable is set, a timer is installed. A choice must be made between `cron` and `systemd`.
+- `borgmatic_timer_extra_args`: Extra arguments to be used, when `borgmatic` is called via above defined timer. Can be used to increase log level e.g. `--syslog-verbosity 1` or dump statistics `--stats`. Defaults to `''`
 - `borgmatic_relocated_repo_access_is_ok`: Bypass Borg error about a repository that has been moved. Defaults to `false`
 - `borgmatic_store_atime`: Store atime into archive. Defaults to `true`
 - `borgmatic_store_ctime`: Store ctime into archive. Defaults to `true`

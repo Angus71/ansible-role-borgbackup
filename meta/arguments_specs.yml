@@ -172,6 +172,13 @@ argument_specs:
         type: str
         required: false
         description: If the variable is set, a timer is installed. A choice must be made between "cron" and "systemd".
+      borgmatic_timer_extra_args:
+        type: str
+        required: false
+        description: |
+          Extra arguments to be used, when "borgmatic" is called via timer.
+          Can be used to increase log level e.g. "--syslog-verbosity 1" or dump statistics
+          "--stats". Defaults to ''
       borg_ssh_key_type:
         type: str
         required: false
