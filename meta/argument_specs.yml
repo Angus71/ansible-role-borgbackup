@@ -179,6 +179,14 @@ argument_specs:
           Extra arguments to be used, when "borgmatic" is called via timer.
           Can be used to increase log level e.g. "--syslog-verbosity 1" or dump statistics
           "--stats". Defaults to ''
+      borgmatic_user_runtime_directory:
+        type: str
+        required: false
+        description: |
+          Set "user_runtime_directory" option in "borgmatic" config. 
+          Might be needed for "borgmatic>=1.9", due to a braeking change.
+          Mostly needed to define a path, which can be mounted into a "docker"
+          container for database backup. Defaults to ''
       borgmatic_timer_hour:
         type: str
         required: false
