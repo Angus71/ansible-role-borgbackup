@@ -112,6 +112,7 @@ $ git clone https://github.com/borgbase/ansible-role-borgbackup.git roles/ansibl
 - `borgmatic_hooks`: Hooks to monitor your backups e.g. with [Healthchecks](https://healthchecks.io/). See [official documentation](https://torsion.org/borgmatic/docs/how-to/monitor-your-backups/) for more.
 - `borgmatic_timer`: If the variable is set, a timer is installed. A choice must be made between `cron` and `systemd`.
 - `borgmatic_timer_extra_args`: Extra arguments to be used, when `borgmatic` is called via above defined timer. Can be used to increase log level e.g. `--syslog-verbosity 1` or dump statistics `--stats`. Defaults to `''`
+- `borgmatic_user_runtime_directory`: Set `user_runtime_directory` option in `borgmatic` config. Might be needed for `borgmatic>=1.9`, due to a braeking change. Mostly needed to define a path, which can be mounted into a `docker` container for database backup. Defaults to `''`
 - `borgmatic_relocated_repo_access_is_ok`: Bypass Borg error about a repository that has been moved. Defaults to `false`
 - `borgmatic_store_atime`: Store atime into archive. Defaults to `true`
 - `borgmatic_store_ctime`: Store ctime into archive. Defaults to `true`

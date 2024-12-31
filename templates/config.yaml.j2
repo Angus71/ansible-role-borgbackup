@@ -14,6 +14,12 @@ location:
     {% endfor %}
 {% endif %}
 
+{% if borgmatic_user_runtime_directory %}
+    # Path for storing temporary runtime data like streaming database
+    # dumps and bootstrap metadata.
+    user_runtime_directory: {{ borgmatic_user_runtime_directory }}
+{% endif %}
+
     # Stay in same file system (do not cross mount points).
     one_file_system: {{ borg_one_file_system }}
     repositories:
